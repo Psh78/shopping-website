@@ -1,0 +1,73 @@
+
+<main class="cart-wrapper">
+    <div class="empty-cart d-flex flex-column justify-content-center align-items-center" *ngIf="cartListData.length === 0">
+        <h1 class="ms-5">Your Cart is Empty :)</h1>
+        <button class="continue-shopping-button box-shadow1 mt-5 rounded-3" routerLink="" >Start Shopping</button>
+    </div>
+    <div class="products-wrapper mt-5" *ngIf="cartListData.length !== 0"> 
+        <div class="product-wrapper-heading d-flex justify-content-between m-0 p-0">
+          <h3 class="ms-5">Shopping Cart</h3>
+        </div>
+        <!-- <div class="products-container m-auto mt-3 p-3">
+          <div class="product d-flex flex-column align-items-center gap-1 p-3 box-shadow1 rounded-2" *ngFor="let product of getProductKeys()">
+            <img [src]="product.image" alt="" height="150px" width="150px" style="cursor: pointer;" class="mt-3 mb-3">
+            <p class="product-title" [title]="product.title.length > 20 ? product.title : ''">{{product.title.length > 20 ? product.title.slice(0, 19) + '...' : product.title}}</p>
+            <p class="p-0 m-0"><span class="fa fa-star text-warning p-0 m-0"></span> {{product.rating.rate}}</p>
+            <p class="text-success fw-semibold p-0 m-0">${{product.price}}</p>
+          </div>
+        </div> -->
+        <section class="cart-products px-5 py-3 d-flex justify-content-between col-12">
+          <div class="col-7">
+            <div style="height: fit-content;" class="cart-product box-shadow2 d-flex justify-content-between p-4 rounded-1" *ngFor="let product of getProductKeys()">
+              <div class="d-flex gap-4">
+                <figure class="cart-product-image">
+                  <img [src]="product.image" height="120px" width="90px" alt="product.title">
+                </figure>
+                <div class="cart-product-details">
+                  <p class="detail-text p-0 m-0 fw-medium"  [title]="product.title.length > 40 ? product.title : ''">{{product.title.length > 40 ? product.title.slice(0, 40)+"..." : product.title}}</p>
+                  <p class="detail-text p-0 m-0">{{product.category | titlecase}}</p>
+                  <p class="p-0 m-0 detail-text"><span class="fa fa-star text-warning p-0 m-0"></span> {{product.rating.rate}}</p>
+                  <div class="price-and-quantity-div d-flex gap-2 pt-2 align-items-center">
+                    <p class="fw-semibold text-success detail-text p-0 m-0 ">${{product.price}}</p>
+                    <div class="quantity-wrapper d-flex align-items-center gap-1">
+                      <button class="quantity-buttons" (click)="changeQuantity(product, (+user.value)-1)" [disabled]="getProductValue(product) === 1">-</button>
+                      <input type="text" (keypress)="quantityInputValidator($event)" (focusout)="quantityValidator(product, user)" [value]="getProductValue(product)" #user class="ps-3" style="width: 20%;">
+                      <button class="quantity-buttons" (click)="changeQuantity(product, (+user.value)+1)" [disabled]="getProductValue(product) === 10">+</button>
+                    </div>
+                  </div>
+                  <p class="detail-text p-0 m-0 fw-medium d-flex gap-2 align-items-center pt-2"><span role="button">Remove</span> <span role="button">Save for later</span></p>
+                </div>
+              </div>
+              <div class="delivery-time ms-5">
+                <p class="detail-text p-0 m-0">Delivery by 11 PM, Tomorrow <span class="fa fa-check-circle fw-bold text-success"></span> </p>
+              </div>
+            </div>
+          </div>
+          <div class="price-details box-shadow2 col-4" style="height: fit-content;">
+            <p class="p-0 m-0 fw-semibold fs-5 px-3 pt-3">Price Details</p>
+            <hr>
+            <div class="price-div d-flex justify-content-between px-3">
+              <p>Price ({{cartMap.size}} items)</p>
+              <p>&#8377; {{totalPrice}}</p>
+            </div>
+            <div class="discount-div d-flex justify-content-between px-3">
+              <p>Discount</p>
+              <p>&#8377; {{discount}}</p>
+            </div>
+            <div class="delivery-charges d-flex justify-content-between px-3">
+              <p>Delivery Charges</p>
+              <p class="text-success">Free</p>
+            </div>
+            <div class="secured-packaging-fee d-flex justify-content-between px-3">
+              <p>Secured Packing Fee</p>
+              <p>&#8377; {{totalPrice > 2000 ? securedPackingFee : 0}}</p>
+            </div>
+            <hr class="mx-3">
+            <div class="total-amount d-flex justify-content-between px-3">
+              <p class="fw-semibold fs-5">Total Amount</p>
+              <p class="fw-semibold fs-5">&#8377; {{ totalPrice + discount + (totalPrice > 2000 ? securedPackingFee : 0) | number : '1.0-2'}}</p>
+            </div>
+          </div>
+        </section>
+    </div>
+</main>

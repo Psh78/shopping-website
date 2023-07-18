@@ -1,0 +1,50 @@
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary position-fixed w-100 top-0">
+    <div class="container-fluid d-flex justify-content-between">
+      <a class="navbar-brand fw-bold fs-3 me-5" [routerLink]="''">Shoppee</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page">Men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Women</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item">Shirts</a></li>
+              <li><a class="dropdown-item">Jeans</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+
+<nav class="navbar d-flex py-2 px-3 justify-content-between position-fixed w-100 top-0">
+  <a class="navbar-brand fw-bold fs-3 me-5" [routerLink]="''">Shoppee</a>
+  <div class="nav-right d-flex gap-2 align-items-center">
+    <div class="wishlist-container d-flex flex-column align-items-center">
+      <div class="wishlist position-relative">
+        <span class="fa fa-heart text-white p-2 rounded-circle bg-danger" title="Wishlist" role="button" [routerLink]="'wishlist'"></span>
+        <!-- <span class="wish-count position-absolute fw-semibold text-danger">{{wishlist.length}}</span> -->
+      </div>
+    </div>
+    <div class="cart-container">
+      <div class="cart">
+        <span class="fa fa-cart-shopping p-2 rounded-circle text-white bg-danger" title="Cart" role="button" routerLink="cart"></span>
+      </div>
+    </div>
+    <span class="fa fa-user p-2 rounded-circle text-white bg-danger" title="My Account" role="button"></span>
+  </div>
+</nav>

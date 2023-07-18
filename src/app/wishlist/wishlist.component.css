@@ -1,0 +1,20 @@
+
+.wishlist-wrapper {
+    min-height: 73vh;
+    margin-top: 6rem;
+}
+
+.continue-shopping-button {
+    border: none;
+    padding: 0.8rem 2rem;
+    transition: 0.15s ease-in-out;
+}
+
+.continue-shopping-button:hover {
+    color: white;
+    background-color: grey;
+}
+
+.emtpy-wishlist {
+    padding-top: 10rem !important;
+}

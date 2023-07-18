@@ -1,0 +1,35 @@
+.cart-wrapper {
+    min-height: 73vh;
+    margin-top: 6rem;
+}
+
+.continue-shopping-button {
+    border: none;
+    padding: 0.8rem 2rem;
+    transition: 0.15s ease-in-out;
+}
+
+.continue-shopping-button:hover {
+    color: white;
+    background-color: grey;
+}
+
+.empty-cart {
+    padding-top: 10rem !important;
+}
+
+.detail-text {
+    font-size: 14px;
+}
+
+.box-shadow2 {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+}
+
+.quantity-buttons {
+    border: 1px solid #d1d1d1;
+    height: 100% !important;
+    border-radius: 1px;
+    width: 27px;
+}
+

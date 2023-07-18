@@ -1,0 +1,14 @@
+
+.corousel-item img {
+    height: 500px;
+    margin: auto;
+}
+
+main {
+    margin-top: 4rem;
+}
+
+.cart-button {
+    background-color: #fb641b;
+    color: white;
+}

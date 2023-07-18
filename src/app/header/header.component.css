@@ -1,0 +1,29 @@
+
+.dropdown-menu li a {
+    color: grey;
+}
+
+a {
+    cursor: pointer;
+}
+
+.fa-magnifying-glass {
+    border: 2px solid rgb(39, 39, 250);
+    color: blue;
+}
+
+.fa-magnifying-glass:hover {
+    color: white;
+    background-color: rgb(39, 39, 250);
+    transition : 0.16s ease-in;
+}
+
+.navbar {
+    z-index: 100;
+    background-color: rgb(246, 246, 246);
+}
+
+.wish-count {
+    right : -5px;
+    top: -5px;
+}

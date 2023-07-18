@@ -1,0 +1,25 @@
+
+<main class="wishlist-wrapper">
+    <div class="emtpy-wishlist d-flex flex-column justify-content-center align-items-center" *ngIf="wishlistData.length === 0">
+        <h1 class="ms-5">Fill your wardrobe with our wide range of products :)</h1>
+        <button class="continue-shopping-button box-shadow1 mt-5 rounded-3" routerLink="" >Start Shopping</button>
+    </div>
+    <div class="products-wrapper mt-5" *ngIf="wishlistData.length !== 0"> 
+        <div class="product-wrapper-heading d-flex justify-content-between m-0 p-0">
+          <h3 class="ms-5">My Wishlist</h3>
+          <!-- <form class="d-flex me-3" role="search">
+            <input class="form-control me-2 filter" type="search" placeholder="Filter" aria-label="Search">
+            <button class="fa-solid fa-magnifying-glass rounded-2 p-2" type="submit"></button>
+          </form> -->
+        </div>
+        <div class="products-container m-auto mt-3 p-3">
+          <div class="product d-flex flex-column align-items-center gap-1 p-3 box-shadow1 rounded-2" *ngFor="let product of wishlistData">
+            <img [src]="product.image" alt="" height="150px" width="150px" style="cursor: pointer;" class="mt-3 mb-3">
+            <p class="product-title" [title]="product.title.length > 20 ? product.title : ''">{{product.title.length > 20 ? product.title.slice(0, 19) + '...' : product.title}}</p>
+            <p class="p-0 m-0"><span class="fa fa-star text-warning p-0 m-0"></span> {{product.rating.rate}}</p>
+            <p class="text-success fw-semibold p-0 m-0">${{product.price}}</p>
+            <button class="cart-button mt-2 p-2 w-100" (click)="addToCartList(product)"> <span class="fa fa-shopping-cart text-danger"></span> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+</main>

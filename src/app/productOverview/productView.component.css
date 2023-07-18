@@ -1,0 +1,35 @@
+
+.product-view-wrapper {
+    margin-top: 6rem;
+}
+
+.fa-tag {
+    color: rgb(36, 194, 0);
+}
+
+.delivery-input {
+    border : none;
+    padding : 1rem 2rem;
+}
+
+.delivery-input:active {
+    border: none;
+    border-bottom: 2px solid rgb(0, 64, 154);
+    transition: border 1s ease-in-out;
+    border: none;
+}
+
+ul, li {
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
+}
+
+li {
+    padding : 0.5rem 1rem;
+}
+
+li:hover {
+    background-color: rgb(234, 234, 234);
+    color: white;
+}
